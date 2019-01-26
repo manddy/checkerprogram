@@ -116,8 +116,9 @@ public class prims {
             node node0 = queue.poll(); 
   
             // Include that node into mstset 
-            
-		mstset[node0.vertex] = true; 
+            	if(node0!=null)
+		{
+			mstset[node0.vertex] = true; 
   
             // For all adjacent vertex of the extracted vertex V 
             for (node1 iterator : graph.adj[node0.vertex]) { 
@@ -137,6 +138,8 @@ public class prims {
                 } 
             } 
         } 
+		}
+		
   
         // Prints the vertex pair of mst 
         for (int o = 1; o < graph.V; o++) 
